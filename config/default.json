@@ -1,3 +1,3 @@
 {
-    "mongoURI":"mongodb://atlas-sql-69c61ca68705d011d4863fe0-5effkh.a.query.mongodb.net/MERN-App?ssl=true&authSource=admin"
+    "mongoURI": "mongodb+srv://adminUser:Admin1234@devconnector.dkptj7c.mongodb.net/MERN-App?retryWrites=true&w=majority&appName=DevConnector"
 }
