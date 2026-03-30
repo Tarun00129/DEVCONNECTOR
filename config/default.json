@@ -1,0 +1,3 @@
+{
+    "mongoURI":"mongodb://atlas-sql-69c61ca68705d011d4863fe0-5effkh.a.query.mongodb.net/MERN-App?ssl=true&authSource=admin"
+}
