@@ -1,3 +1,4 @@
 {
-    "mongoURI": "mongodb+srv://adminUser:Admin1234@devconnector.dkptj7c.mongodb.net/MERN-App?retryWrites=true&w=majority&appName=DevConnector"
+    "mongoURI": "mongodb+srv://adminUser:Admin1234@devconnector.dkptj7c.mongodb.net/MERN-App?retryWrites=true&w=majority&appName=DevConnector",
+    "jwtSecret": "ThisIsASecretStringWhichShouldBeChangedInProduction"
 }
