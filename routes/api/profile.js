@@ -106,8 +106,7 @@ router.post('/', [auth, [
             profile = await ProfileModel.findOneAndUpdate(
                 { user: req.user.id },
                 { $set: profileFields },
-                { new: true },
-                // { returnDocument: true }
+                { returnDocument: 'after' }
             );
             return res.json({profile, msg: 'Profile Updated Successfully'});
         }
@@ -117,6 +116,38 @@ router.post('/', [auth, [
         res.json({profile, msg: 'Profile Created Successfully'});
     } catch (err) {
         console.error(err.message);
+        res.status(500).send('Server Error');
+    }
+});
+
+// @route   GET api/profile
+// @desc    Get all profiles
+// @access  Public  
+router.get('/', async(req, res)=>{
+    try {
+        const profiles = await ProfileModel.find().populate('user', ['name', 'avatar']);
+        res.json(profiles);
+    } catch (error) {
+        console.error(error.message);
+        res.status(500).send('Server Error');
+    }
+})
+
+// @route   GET api/profile/user/:user_id
+// @desc    Get profile by user ID
+// @access  Public  
+router.get('/user/:user_id', async(req, res)=>{
+    try {
+        const profile = await ProfileModel.findOne({ user: req.params.user_id }).populate('user', ['name', 'avatar']);
+        if (!profile) {
+            return res.status(404).json({ msg: 'Profile not found' });
+        }
+        res.json(profile);
+    } catch (error) {
+        if (error.kind === 'ObjectId') {
+            return res.status(404).json({ msg: 'Profile not found 2' });
+        }
+        console.error(error.message);
         res.status(500).send('Server Error');
     }
 });
