@@ -1,4 +1,6 @@
 {
     "mongoURI": "mongodb+srv://adminUser:Admin1234@devconnector.dkptj7c.mongodb.net/MERN-App?retryWrites=true&w=majority&appName=DevConnector",
-    "jwtSecret": "ThisIsASecretStringWhichShouldBeChangedInProduction"
+    "jwtSecret": "ThisIsASecretStringWhichShouldBeChangedInProduction",
+    "githubClientId": "Ov23lifeBL9DF8CQwXZM",
+    "githubSecret": "03b1de08c99afb2d1971fb4e0260f49f6ec266be"
 }
